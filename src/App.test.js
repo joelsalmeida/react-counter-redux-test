@@ -25,4 +25,11 @@ describe('testing clicks', () => {
     expect(buttonAdicionar).toBeInTheDocument();
     expect(screen.getByText('0')).toBeInTheDocument();
   });
+
+  test('the number of clicks must be 5', () => {
+    renderWithRedux(<App />, { initialState: { clickReducer: { counter: 5 }}});
+  
+    expect(screen.getByText('5')).toBeInTheDocument();
+  });
 });
+
